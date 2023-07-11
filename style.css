@@ -1,0 +1,268 @@
+:root{
+    --primary-clr:rgb(79, 141, 150);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    background-color: white;
+  }
+  .container{
+    position: relative;
+    width: 1200px;
+    min-height: 850px;
+    margin: 0 auto;
+    padding: 5px;
+    color: black;
+    display: flex;
+    border-radius: 15px;
+    background-color: grey;
+  }
+  .left{
+    width: 60%;
+    padding: 20px;
+  }
+  .calander {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: black;
+    border-radius: 15px;
+    background-color: white;
+  }
+  .calander .month {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .calander .month .prev,
+  .calander .month .next{
+    cursor: pointer;
+  }
+  .calander .weekdays {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    
+  }
+  .weekdays div {
+    width: 14.28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .calander .days{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .calander .days .day{
+    width: 14%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary-clr);
+    border: 1px solid grey;
+  }
+  .calander .days .day:not(.prev-date, .next-date):hover {
+    color: white;
+    background-color: rgba(79, 141, 150,0.5);
+  }
+  .calander .days .prev-date,
+  .calander .days .next-date{
+    color: grey;
+  }
+  .calander .days .today{
+    color: white;
+    background-color: var(--primary-clr);
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .calendar .days .today::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .calander .days .event {
+    position: relative;
+  }
+  .calendar .days .event::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 75%;
+    height: 6px;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    background-color: var(--primary-clr);
+}
+.calendar .days .day:hover.event::after {
+    background-color: white;
+  }
+ .calander .today-button{
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    display: block;
+   margin: auto;
+   margin-bottom: 20px;
+    
+ } 
+ .calander .today-button:hover{
+    color: white;
+    background-color: var(--primary-clr);
+ }
+
+.container .right {
+    position: relative;
+    width: 30%;
+    min-height: 100%;
+    padding: 20px 0;
+}
+.right .today-date {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px 40px;
+    padding-left: 100px;
+    text-transform: capitalize;
+    gap: 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    
+    
+}
+.right .today-date .event-day {
+    font-size: 30px;
+    font-weight: 500;
+
+}
+.right .today-date .event-date{
+font-size: 15px;
+font-weight: 400;
+color: rgb(189, 187, 187);
+padding-bottom:20px;;
+}
+
+.events .event {
+    position: relative;
+    width: 95%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-top: 50px;
+    padding-left: 50px;
+    color: white;
+    cursor: pointer;
+  }
+  
+ 
+  .events .event .title .event-title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 0;
+    font-weight: bold;
+    color: black;
+    padding-top: 15px;
+    text-decoration: underline;
+  }
+  .events .event .event-time {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-left: 15px;
+    pointer-events: none;
+    padding-top: 15px;
+  }
+  .events .event .title .actual-event {
+    font-weight: 100;
+    font-size: 15px;
+    padding-top: 5px;
+}
+@media screen and (max-width: 1000px) {
+    body {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .container {
+      min-height: 100vh;
+      flex-direction: column;
+      border-radius: 0;
+    }
+    .container .left {
+      width: 100%;
+      height: 100%;
+      padding: 20px 0;
+    }
+    .container .right {
+      width: 100%;
+      height: 100%;
+      padding: 20px 0;
+    }
+    .events {
+      padding-bottom: 340px;
+    }
+    
+  }
+  @media screen and (max-width: 500px) {
+    .calendar .month {
+      height: 75px;
+    }
+    .calendar .weekdays {
+      height: 50px;
+    }
+    .calendar .days .day {
+      height: 40px;
+      font-size: 0.8rem;
+    }
+  }
